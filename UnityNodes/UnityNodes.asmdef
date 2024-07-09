@@ -1,0 +1,17 @@
+{
+    "name": "UnityNodes",
+    "rootNamespace": "",
+    "references": [
+        "ProtocolBuffers",
+        ""
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,17 @@
+{
+    "name": "UnityNodeWrapper",
+    "rootNamespace": "",
+    "references": [
+        "GUID:eed18ffe646e39a49b17a31f8df14c15",
+        "GUID:4c42dc0b72414fd43ba89887e01697ba"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
