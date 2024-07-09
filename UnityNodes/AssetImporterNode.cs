@@ -3,6 +3,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 using Google.Protobuf;
+using System;
 
 namespace MBody
 {
@@ -12,7 +13,7 @@ namespace MBody
     public class AssetImporterNode : BaseNode
     {
         public string assetPath = "";
-        public string assetDestinationFolder = "Assets/Animations/";
+        public string assetDestinationFolder = "Assets/Imported/";
         /// <summary>
         /// Initializes a new instanse of the AssetImporterNode.
         /// </summary>
@@ -30,7 +31,12 @@ namespace MBody
             FrameCollectionMessage message = FrameCollectionMessage.Parser.ParseFrom(data);
             StringData testData = StringData.Parser.ParseFrom(message.Data);
             string path = testData.StringData_;
+            if (!AssetDatabase.IsValidFolder(assetDestinationFolder))
+            {
+                assetDestinationFolder = AssetDatabase.GUIDToAssetPath(AssetDatabase.CreateFolder("Assets", "Imported")) + "/";
+            }
 
+            
             assetPath = assetDestinationFolder + Path.GetFileName(path);
             try
             {
@@ -68,6 +74,7 @@ namespace MBody
             }
             catch (IOException ex)
             {
+                Debug.Log(ex.Message);
                 Debug.Log("The asset couldn't import.");
             }
         }
